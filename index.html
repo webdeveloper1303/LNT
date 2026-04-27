@@ -1,0 +1,42 @@
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #fce4ec;
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+    }
+    .gift-container { cursor: pointer; }
+    .box {
+        width: 150px;
+        height: 150px;
+        background-color: #e74c3c;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .box::before {
+        content: ''; position: absolute; width: 30px; height: 100%;
+        background-color: #f1c40f; left: 50%; transform: translateX(-50%);
+    }
+    .box::after {
+        content: ''; position: absolute; width: 100%; height: 30px;
+        background-color: #f1c40f; top: 50%; transform: translateY(-50%);
+    }
+    #message {
+        margin-top: 30px; padding: 20px; background: white;
+        border-radius: 15px; font-size: 1.2rem;
+        text-align: center; opacity: 0;
+        transition: all 0.5s ease;
+    }
+    #message.show { opacity: 1; }
+</style>
+
+<div class="gift-container" onclick="document.getElementById('message').classList.toggle('show')">
+    <div class="box"></div>
+</div>
+
+<div id="message">Nghỉ nha ố là lá</div>
